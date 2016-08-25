@@ -1,0 +1,14 @@
+web:
+  image: wordpress:4.6.0-apache
+  environment:
+    WORDPRESS_DB_PASSWORD: password
+  ports:
+    - 8000:80
+  links:
+    - mysql
+
+mysql:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: wordpress

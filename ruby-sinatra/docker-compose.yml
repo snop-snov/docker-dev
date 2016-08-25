@@ -1,0 +1,11 @@
+web:
+  build: .
+  ports:
+    - 8000:8000
+  links:
+    - db
+  environment:
+    REDIS_HOST: db
+    REDIS_PORT: 6379
+db:
+  image: redis
